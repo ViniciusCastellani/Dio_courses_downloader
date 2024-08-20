@@ -75,7 +75,7 @@ def get_html():
 
 def get_subject_name(html):
     """
-    Dentro de um SPAN
+    The text is inside of an SPAN which has
     class="sc-cWSHoV jmOqli"
     """
     soup = BeautifulSoup(html, 'lxml')
@@ -87,7 +87,7 @@ def get_subject_name(html):
 
 def get_video(html):
     """
-    Ex: link = src="https://www.youtube.com/embed/LOyFqTVqEXE?controls=0&disablekb=1&enablejsapi=1&fs=0&iv_load_policy=3&modestbranding=1&showinfo=0&rel=0&html5=1&cc_load_policy=0&origin=https%3A%2F%2Fweb.dio.me&widgetid=1"
+    Ex: link = src="https://www.youtube.com/embed/..."
     """
     
     soup = BeautifulSoup(html, 'lxml')
