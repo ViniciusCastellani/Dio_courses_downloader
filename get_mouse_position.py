@@ -2,7 +2,7 @@ import pyautogui
 import time
 
 def get_mouse_position():
-    # Aguardar 3 segundos para o usuário posicionar o cursor
+    # Wait 6 seconds to get the mouse position
     time.sleep(6)
     x, y = pyautogui.position()
     print(f"Cursor position: ({x}, {y})")
