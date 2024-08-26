@@ -53,7 +53,7 @@ def download_videos(urls, output_path):
 
 
 def get_images_diretory():
-    browser = input("What browser are you using? ")
+    browser = input("\nWhat browser are you using? ").lower()
     base_dir = os.path.dirname(__file__)
     images_directory = os.path.join(base_dir, "images", browser)
     return images_directory, browser
@@ -90,14 +90,14 @@ def init_image_list(images_directory):
 
             else:
                 images_path["play_button"] = os.path.join(images_directory, filename)
-                
+
     return images_path
 
 
-def locate_and_click(image_path, right_click):
+def locate_and_click(image_path, right_click, grayScale=True):
     try:
         location = pyautogui.locateCenterOnScreen(
-            image_path, grayscale=True, confidence=0.7
+            image_path, grayscale=grayScale, confidence=0.7
         )
 
         if location is not None:
@@ -108,18 +108,19 @@ def locate_and_click(image_path, right_click):
                 pyautogui.click(location)
             return {"x": x, "y": y}
         else:
-            print(f"image not found on screen")
             return None
     except Exception as e:
-        print(f"Error location file: {e}")
         return None
 
 
-def locate_and_click_multiple_files(images_paths, right_click):
+def locate_and_click_multiple_files(images_paths, right_click, grayScale=True):
     for image_path in images_paths:
-        location = locate_and_click(image_path, right_click)
+        location = locate_and_click(image_path, right_click, grayScale)
         if location is not None:
             break
+
+    if location is None:
+        print(f"image not found on screen")
 
 
 def play_stop_video(images_path):
@@ -193,9 +194,11 @@ def get_iframe_src(iframe):
 
 
 # TODO: FIX THIS PART -> Image not recognizing on screen
-# def change_video(images_path):
-#     # pyautogui.click(1236, 396) # clicks in the right arrow of the video
-#     location = locate_and_click_multiple_files(images_path["change_video"], False)
+def change_video(images_path):
+    #   pyautogui.click(1236, 396) # clicks in the right arrow of the video
+    location = locate_and_click_multiple_files(
+        images_path["change_video"], False, False
+    )
 
 
 def menu():
@@ -213,8 +216,9 @@ def menu():
     change_directory(current_path)
 
     print("\nNow go to the course website and be on the lesson you want to download.")
+    time.sleep(3)
     input("Done? Press any key to continue...")
-    print("Now minimize this terminal and maximize the web browser window\n\n")
+    print("\nNow minimize this terminal and maximize the web browser window\n\n")
     return current_path
 
 
@@ -223,7 +227,7 @@ def main():
     images_paths = init_image_list(images_directory)
 
     current_path = menu()
-    time.sleep(4)
+    time.sleep(6)
     play_stop_video(images_paths)
     time.sleep(3)
     open_developer_tools()
@@ -243,20 +247,31 @@ def main():
 
         pyautogui.hotkey("alt", "tab")
 
-        response = input("Do you want to continue? [Y/N]: ")
+        response = input("\nDo you want to continue? [Y/N]: ")
 
         if response.lower() == "y":
-            print("Go to the next video! and minimize this terminal")
-            time.sleep(10)
+            # print("Go to the next video! and minimize this terminal")
+            # time.sleep(10)
+            # open_developer_tools()
+            # time.sleep(3)
+            # play_stop_video(images_paths)
+            # time.sleep(3)
+            # open_developer_tools()
+            # time.sleep(1)
+            print("Minimize this terminal and go to the course")
+            time.sleep(6)
             open_developer_tools()
-            time.sleep(3)
-            play_stop_video(images_paths)
-            time.sleep(3)
-            open_developer_tools()
-            time.sleep(1)
+            time.sleep(2)
+            change_video(images_paths)
+            time.sleep(5)
 
         if response.lower() == "n":
             break
+
+        play_stop_video(images_paths)
+        time.sleep(5)
+        open_developer_tools()
+        time.sleep(2)
 
         html = get_html(images_paths)
 
