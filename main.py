@@ -18,7 +18,7 @@ def get_origin_path():
         root_path = input("Enter the path where you want to save the videos: ")
         change_directory(root_path)
         return root_path
-
+    
     else:  # Linux
         root_path = input("Enter the path where you want to save the videos: ")
         return root_path
