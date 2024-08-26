@@ -193,7 +193,6 @@ def get_iframe_src(iframe):
     )
 
 
-# TODO: FIX THIS PART -> Image not recognizing on screen
 def change_video(images_path):
     #   pyautogui.click(1236, 396) # clicks in the right arrow of the video
     location = locate_and_click_multiple_files(
