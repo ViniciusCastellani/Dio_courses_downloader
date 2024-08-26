@@ -6,9 +6,9 @@ Dio Courses Downloader is a Python script designed to automate the process of do
 
 ## Features
 
-- Automates the process of downloading relevant images from specified courses.
-- Supports interaction with the Firefox browser for image retrieval.
-- Organizes downloaded images into structured folders based on course and institution.
+- Automates the process of downloading relevant videos from specified courses.
+- Supports interaction with the Firefox browser for video retrieval.
+- Organizes downloaded videos into structured folders based on course and institution.
 
 ## Requirements
 
