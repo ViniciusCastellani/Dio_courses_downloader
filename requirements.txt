@@ -1,0 +1,7 @@
+yt-dlp 
+beautifulsoup4 
+pyautogui 
+pyperclip 
+opencv-python 
+requests 
+ruamel-yaml
