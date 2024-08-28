@@ -15,7 +15,7 @@ Dio Courses Downloader is a Python script designed to automate the process of do
 Before running the script, ensure you have the following Python libraries installed:
 
 ```bash
-pip install yt-dlp beautifulsoup4 pyautogui pyperclip opencv-python requests ruamel-yaml
+pip install -r requirements.txt
 ```
 
 Note: The script is currently optimized for use with Firefox and chrome. Support for other browsers may be limited or require additional configuration.
