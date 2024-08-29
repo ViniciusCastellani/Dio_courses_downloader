@@ -239,7 +239,7 @@ def main():
     change_directory(current_path)
 
     while True:
-        time.sleep(3)
+        time.sleep(5)
         video_link = get_video(html)
 
         urls.append(video_link)
@@ -260,15 +260,15 @@ def main():
             print("Minimize this terminal and go to the course")
             time.sleep(6)
             open_developer_tools()
-            time.sleep(2)
+            time.sleep(4)
             change_video(images_paths)
-            time.sleep(5)
+            time.sleep(7)
 
         if response.lower() == "n":
             break
 
         play_stop_video(images_paths)
-        time.sleep(5)
+        time.sleep(7)
         open_developer_tools()
         time.sleep(2)
 
