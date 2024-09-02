@@ -1,5 +1,9 @@
 # Dio Courses Downloader
 
+## Preview
+[![Watch the demonstration](https://img.youtube.com/vi/_AgS9Vi1HEw/maxresdefault.jpg)](https://youtu.be/_AgS9Vi1HEw)
+
+
 ## Overview
 
 Dio Courses Downloader is a Python script designed to automate the process of downloading videos of the classes related to specific courses from the Dio platform. This tool is particularly useful for educators, students, or anyone looking to gather video resources for learning or teaching purposes. 
