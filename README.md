@@ -1,7 +1,7 @@
 # Dio Courses Downloader
 
 ## Preview
-[![Watch the demonstration on Youtube](https://img.youtube.com/vi/_AgS9Vi1HEw/maxresdefault.jpg)](https://youtu.be/_AgS9Vi1HEw)
+[![Watch the demonstration](https://img.youtube.com/vi/_AgS9Vi1HEw/maxresdefault.jpg)](https://youtu.be/_AgS9Vi1HEw)
 
 
 ## Overview
