@@ -239,7 +239,7 @@ def main():
     change_directory(current_path)
 
     while True:
-        time.sleep(5)
+        time.sleep(3)
         video_link = get_video(html)
 
         urls.append(video_link)
