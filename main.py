@@ -268,7 +268,7 @@ def main():
             break
 
         play_stop_video(images_paths)
-        time.sleep(7)
+        time.sleep(4)
         open_developer_tools()
         time.sleep(2)
 
