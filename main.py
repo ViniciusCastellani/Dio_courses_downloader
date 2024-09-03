@@ -62,7 +62,7 @@ def get_images_diretory():
 def init_image_list(images_directory):
     images_path = {
         "html": [],
-        "play_button": None,
+        "play_button": [],
         "outer_html": [],
         "copy": [],
         "change_video": [],
@@ -88,8 +88,8 @@ def init_image_list(images_directory):
                     os.path.join(images_directory, filename)
                 )
 
-            else:
-                images_path["play_button"] = os.path.join(images_directory, filename)
+            elif str(filename).lower().startswith("play"):
+                images_path["play_button"].append(os.path.join(images_directory, filename))
 
     return images_path
 
@@ -114,10 +114,11 @@ def locate_and_click(image_path, right_click, grayScale=True):
 
 
 def locate_and_click_multiple_files(images_paths, right_click, grayScale=True):
+    location = None
     for image_path in images_paths:
         location = locate_and_click(image_path, right_click, grayScale)
         if location is not None:
-            break
+            return location
 
     if location is None:
         print(f"image not found on screen")
@@ -129,10 +130,11 @@ def play_stop_video(images_path):
     # pyautogui.click(580, 313)
     # time.sleep(4)
     # pyautogui.click(580, 313)
-    location = locate_and_click(images_path["play_button"], False)
+    location = locate_and_click_multiple_files(images_path["play_button"], False)
     time.sleep(5)
-    x, y = location["x"], location["y"]
-    pyautogui.click(x, y)
+    if location:
+        x, y = location["x"], location["y"]
+        pyautogui.click(x, y)
 
 
 def open_developer_tools():

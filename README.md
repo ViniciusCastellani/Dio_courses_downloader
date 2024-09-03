@@ -11,12 +11,12 @@ Dio Courses Downloader is a Python script designed to automate the process of do
 ## Features
 
 - Automates the process of downloading relevant videos from specified courses.
-- Supports interaction with the Firefox browser for video retrieval.
+- Supports interaction with the Firefox and Chrome browser for video retrieval.
 - Organizes downloaded videos into structured folders based on course and institution.
 
 ## Requirements
 
-Before running the script, ensure you have the following Python libraries installed:
+Before running the script, ensure you run this command on terminal:
 
 ```bash
 pip install -r requirements.txt
@@ -47,8 +47,8 @@ python main.py
 ### Important Notes
 
 - The script requires manual navigation to the course website selection of the lesson. Ensure you have Firefox or chrome installed and set as your default browser.
-- The script uses images stored in the `images` directory within the project folder. Ensure this directory contains the correct images for the browser you are using (currently supported: Firefox).
-- Downloaded images will be saved in a structured directory format based on the institution and course name.
+- The script uses images stored in the `images` directory within the project folder. Ensure this directory contains the correct images for the browser you are using (currently supported: Firefox and chrome).
+- Downloaded videos will be saved in a structured directory format based on the institution and course name.
 
 ## Contributing
 
